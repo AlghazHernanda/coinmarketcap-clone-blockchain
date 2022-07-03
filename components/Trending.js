@@ -6,6 +6,7 @@ import usdt from "../assets/usdt.png"
 import gainers from "../assets/gainers.png"
 import recent from "../assets/recent.png"
 import ReactSwitch from "react-switch"
+import TrendingCard from "./trendingCard"
 
 const styles = {
     trendingWrapper: `mx-auto max-w-screen-2xl`,
@@ -13,8 +14,35 @@ const styles = {
     flexCenter: `flex items-center,`
 }
 
+
 const Trending = () => {
     const [checked, setChecked] = useState(false)
+
+    
+    const trendingData = [
+        {
+            number: 1,
+            symbol: "BTC",
+            name: "Bitcoin",
+            icon: btc,
+            isIncrement: true,
+            rate: "2.34%"
+        }, {
+            number: 2,
+            symbol: "USDT",
+            name: "Tether",
+            icon: usdt,
+            isIncrement: false,
+            rate: "9.32%"
+        }, {
+            number: 1,
+            symbol: "BTC",
+            name: "Bitcoin",
+            icon: btc,
+            isIncrement: true,
+            rate: "2.34%"
+        },
+    ]
 
   return (
     <div className="text-white">
@@ -38,9 +66,9 @@ const Trending = () => {
             <br />
 
             <div className={styles.flexCenter}>
-                {/* <TrendingCard title='Trending' icon={fire} trendingData={trendingData} />
+                <TrendingCard title='Trending' icon={fire} trendingData={trendingData} />
                 <TrendingCard title='Biggest Gainers' icon={gainers} trendingData={trendingData} />
-                <TrendingCard title='Recently Added' icon={recent} trendingData={trendingData} /> */}
+                <TrendingCard title='Recently Added' icon={recent} trendingData={trendingData} />
             </div>
         </div>
     </div>
