@@ -1,5 +1,5 @@
 import { useState } from "react"
-// import Rate from "./cmc-table/rate"
+import Rate from "./cmc-table/rate"
 import fire from "../assets/fire.png"
 import btc from "../assets/btc.png"
 import usdt from "../assets/usdt.png"
@@ -31,7 +31,7 @@ const Trending = () => {
             <div className="flex">
                 <p>The global crypto market cap is $1.74T, a &nbsp; </p>
                 <span> 
-                    {/* <Rate isIncrement={true} rate='0.53%' />  */}
+                    <Rate isIncrement={true} rate='0.53%' /> 
                 </span>
                 <p> &nbsp; decrease over the last day. <span className="underline">Read More</span> </p>
             </div>
