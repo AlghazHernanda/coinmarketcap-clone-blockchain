@@ -1,6 +1,6 @@
 import React from 'react'
 import MoreButton from './moreButton'
-// import TrendingCardRow from './trendingCardRow'
+import TrendingCardRow from './trendingCardRow'
 import Image from 'next/image'
 
 const styles = {
@@ -24,15 +24,15 @@ const TrendingCard = ({ icon, title, trendingData }) => {
         {/* ini mirip for, jadi item itu data single, index itu index dari datanya */}
       {trendingData.map((item, index) => {
         return (
-        //   <TrendingCardRow
-        //     key={index}
-        //     number={item.number}
-        //     symbol={item.symbol}
-        //     name={item.name}
-        //     icon={item.icon}
-        //     isIncrement={item.isIncrement}
-        //     rate={item.rate}
-        //   />
+          <TrendingCardRow
+            key={index}
+            number={item.number}
+            symbol={item.symbol}
+            name={item.name}
+            icon={item.icon}
+            isIncrement={item.isIncrement}
+            rate={item.rate}
+          />
         )
       })}
     </div>
