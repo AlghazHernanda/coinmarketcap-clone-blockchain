@@ -26,6 +26,7 @@ const CMCTable = () => {
           setCoinData(filteredResponse)
         } catch (e) {
           console.log(e.message)
+         
         }
       }, [getTopTenCoins])
 
