@@ -16,7 +16,7 @@ const styles = {
     flexCenter: `flex items-center`,
   }
 
-const info = () => {
+const currencies = () => {
   const [coinName, setCoinName] = useState('')
   const [coinSymbol, setCoinSymbol] = useState('')
   const [price, setPrice] = useState('')
@@ -100,4 +100,4 @@ const info = () => {
   )
 }
 
-export default info
+export default currencies
