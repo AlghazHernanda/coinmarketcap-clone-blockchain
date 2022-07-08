@@ -28,6 +28,10 @@ const Chat = () => {
 
     const [message, setMessage] = useState('')
     const [bullishValue, setBullishValue] = useState(true)
+
+    const sendMessage = () => {
+        
+    }
   
     // const { gun, getMessages, state } = useContext(GunContext)
 
@@ -100,7 +104,7 @@ const Chat = () => {
     />
 
     <div className={styles.postButtonContainer}>
-      {/* <Button label='Post' onPress={sendMessage} /> */}
+      <Button label='Post' onPress={sendMessage} />
     </div>
     {/* {formattedMessagesArray()
       .slice(0)
