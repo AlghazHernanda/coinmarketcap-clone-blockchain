@@ -100,9 +100,9 @@ const Chat = () => {
     />
 
     <div className={styles.postButtonContainer}>
-      <Button label='Post' onPress={sendMessage} />
+      {/* <Button label='Post' onPress={sendMessage} /> */}
     </div>
-    {formattedMessagesArray()
+    {/* {formattedMessagesArray()
       .slice(0)
       .reverse()
       .map((message, index) => (
@@ -117,7 +117,7 @@ const Chat = () => {
           likes='2.7K'
           comments='19K'
         />
-      ))}
+      ))} */}
   </>
   )
 }
