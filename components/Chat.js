@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from 'react'
 // import { GunContext } from '../context/gunContext'
 // import { faker } from '@faker-js/faker'
 import ChevronUp from '../assets/svg/chevronUp'
-import ChatCard from './chatCard'
+import ChatCard from './ChatCard'
 import Button from './button'
 import shiba from '../assets/shiba.png'
 import Image from 'next/image'
@@ -30,7 +30,7 @@ const Chat = () => {
     const [bullishValue, setBullishValue] = useState(true)
 
     const sendMessage = () => {
-        
+
     }
   
     // const { gun, getMessages, state } = useContext(GunContext)
@@ -109,19 +109,19 @@ const Chat = () => {
     {/* {formattedMessagesArray()
       .slice(0)
       .reverse()
-      .map((message, index) => (
+      .map((message, index) => ( */}
         <ChatCard
-          key={index}
-          sender={message.sender}
-          senderUsername={message.username}
-          senderAvatar='https:/encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU'
-          bullish={message.isBullish}
-          timestamp={message.createdAt}
-          content={message.content}
-          likes='2.7K'
-          comments='19K'
+        //   key={index}
+        //   sender={message.sender}
+        //   senderUsername={message.username}
+        //   senderAvatar='https:/encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU'
+        //   bullish={message.isBullish}
+        //   timestamp={message.createdAt}
+        //   content={message.content}
+        //   likes='2.7K'
+        //   comments='19K'
         />
-      ))} */}
+      {/* ))} */}
   </>
   )
 }
