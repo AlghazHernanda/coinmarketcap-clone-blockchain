@@ -153,18 +153,18 @@ export const CoinMarketProvider = ({ children }) => {
           value={{
             //agar variabel nya menjadi global dan bisa dipakai dimana saja
             getTopTenCoins,
-            // openBuyCryptoModal,
-            // setOpenBuyCryptoModal,
+            openBuyCryptoModal,
+            setOpenBuyCryptoModal,
             // coins,
             // loadingCoins,
-            // fromToken,
-            // toToken,
-            // setFromToken,
-            // setToToken,
-            // amount,
-            // setAmount,
-            // mint,
-            // openModal,
+            fromToken,
+            toToken,
+            setFromToken,
+            setToToken,
+            amount,
+            setAmount,
+            mint,
+            openModal,
           }}
         >
           {children}
