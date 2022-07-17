@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { MoralisProvider } from 'react-moralis'
 import { CoinMarketProvider } from '../context/context'
+import { GunProvider } from '../context/gunContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,11 +11,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     serverUrl='https://vc3dsi3cyghd.usemoralis.com:2053/server'
     appId='V5XCyHfSwEvnwBHo6Px8RBXw4B7BsPdZlsV85MiU'
   >
-    {/* <GunProvider> */}
+    <GunProvider>
       <CoinMarketProvider>
         <Component {...pageProps} />
       </CoinMarketProvider>
-    {/* </GunProvider> */}
+    </GunProvider>
   </MoralisProvider>
   )
  
