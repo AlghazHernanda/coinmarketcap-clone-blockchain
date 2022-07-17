@@ -1,7 +1,7 @@
 import ChevronDown from '../assets/svg/chevronDown'
 import { useState, useContext, useEffect } from 'react'
-// import { GunContext } from '../context/gunContext'
-// import { faker } from '@faker-js/faker'
+import { GunContext } from '../context/gunContext'
+import { faker } from '@faker-js/faker'
 import ChevronUp from '../assets/svg/chevronUp'
 import ChatCard from './ChatCard'
 import Button from './button'
@@ -29,11 +29,52 @@ const Chat = () => {
     const [message, setMessage] = useState('')
     const [bullishValue, setBullishValue] = useState(true)
 
-    const sendMessage = () => {
+    
+    const { gun, getMessages, state } = useContext(GunContext)
 
+    useEffect(() => {
+      getMessages('GUN_REF_7')
+    }, [])
+
+    const formattedMessagesArray = () => {
+      const uniqueArray = state.messages.filter((value, index) => {
+        const _value = JSON.stringify(value)
+  
+        return (
+          index ===
+          state.messages.findIndex(obj => {
+            return JSON.stringify(obj) === _value
+          })
+        )
+      })
+      console.log(uniqueArray)
+      return uniqueArray
+    }
+
+    const sendMessage = () => {
+      if (message.trim() === '') return
+  
+      // const messagesRef = gun.get('GUN_REF')
+      // const messagesRef = gun.get("GUN_REF_2")
+  
+      const messagesRef = gun.get('GUN_REF_7')
+  
+      const newMessage = {
+        sender: faker.name.findName(),
+        avatar:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU',
+        content: message.trim(),
+        isBullish: bullishValue,
+        createdAt: Date().substring(4, 11),
+        messageId: Date.now(),
+      }
+  
+      console.log(newMessage)
+  
+      messagesRef.set(newMessage)
+      setMessage('')
     }
   
-    // const { gun, getMessages, state } = useContext(GunContext)
 
   return (
     <>
@@ -106,22 +147,22 @@ const Chat = () => {
     <div className={styles.postButtonContainer}>
       <Button label='Post' onPress={sendMessage} />
     </div>
-    {/* {formattedMessagesArray()
+    {formattedMessagesArray()
       .slice(0)
       .reverse()
-      .map((message, index) => ( */}
+      .map((message, index) => (
         <ChatCard
-        //   key={index}
-        //   sender={message.sender}
-        //   senderUsername={message.username}
-        //   senderAvatar='https:/encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU'
-        //   bullish={message.isBullish}
-        //   timestamp={message.createdAt}
-        //   content={message.content}
-        //   likes='2.7K'
-        //   comments='19K'
+          key={index}
+          sender={message.sender}
+          senderUsername={message.username}
+          senderAvatar='https:/encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU'
+          bullish={message.isBullish}
+          timestamp={message.createdAt}
+          content={message.content}
+          likes='2.7K'
+          comments='19K'
         />
-      {/* ))} */}
+       ))} 
   </>
   )
 }
